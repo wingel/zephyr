@@ -1,6 +1,6 @@
-# Kconfig.soc - ST Microelectronics STM32F4 MCU line
+# Kconfig - ST STM32F405xG MCU configuration options
 #
-# Copyright (c) 2016 Linaro Limited.
+# Copyright (c) 2017 Christer Weinigel
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,17 +15,28 @@
 # limitations under the License.
 #
 
-choice
-prompt "STM32F4x MCU Selection"
-depends on SOC_SERIES_STM32F4X
+if SOC_STM32F405XG
 
-config SOC_STM32F401XE
-	bool "STM32F401XE"
+config SOC
+	string
+	default stm32f405xx
 
-config SOC_STM32F405XG
-	bool "STM32F405XG"
+config SRAM_SIZE
+	default 112
 
-config SOC_STM32F411XE
-	bool "STM32F411XE"
+config FLASH_SIZE
+	default 1024
 
-endchoice
+config NUM_IRQS
+	int
+	default 82
+
+config USB_DC_STM_EP_NUM
+	int
+	default 4
+
+config USB_DC_STM_PACKET_RAM_SIZE
+	int
+	default 1280
+
+endif # SOC_STM32F405XG
