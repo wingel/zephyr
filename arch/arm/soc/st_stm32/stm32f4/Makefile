@@ -1,4 +1,5 @@
 obj-y += soc.o
+obj-y += soc_stmcube_glue.o
 
 obj-$(CONFIG_GPIO) += soc_gpio.o
 obj-$(CONFIG_PINMUX) += soc_pinmux.o

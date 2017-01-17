@@ -18,6 +18,9 @@ obj-y += stm32f4xx/drivers/src/stm32f4xx_hal.o
 obj-y += stm32f4xx/drivers/src/stm32f4xx_hal_rcc.o
 obj-$(CONFIG_PWM) += stm32f4xx/drivers/src/stm32f4xx_hal_tim.o
 obj-$(CONFIG_SERIAL_HAS_DRIVER) += stm32f4xx/drivers/src/stm32f4xx_hal_uart.o
+obj-$(CONFIG_USB_DC_STM) += stm32f4xx/drivers/src/stm32f4xx_ll_usb.o \
+			    stm32f4xx/drivers/src/stm32f4xx_hal_pcd.o \
+			    stm32f4xx/drivers/src/stm32f4xx_hal_pcd_ex.o
 obj-y += stm32f4xx/soc/system_stm32f4xx.o
 endif
 

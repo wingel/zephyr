@@ -51,4 +51,49 @@ config SYS_LOG_USB_DW_LEVEL
 
 	- 4 DEBUG, write SYS_LOG_DBG in adition to previous levels
 
+config USB_DC_STM
+	bool
+	prompt "USB device controller driver for STM32 devices"
+	default n
+	help
+	Enable support for the USB device controller on the STM32
+	family of microcontrollers
+
+config USB_DC_STM_IRQ_PRI
+	int
+	prompt "USB Controller interrupt priority"
+	depends on USB_DC_STM
+	default 1
+	help
+	IRQ priority.
+
+config USB_DC_STM_VBUS_SENSING
+	bool
+	prompt "USB controller VBUS sensing"
+	depends on USB_DC_STM
+	default n
+	help
+	Say Y if your board uses the VBUS pin on the MCU to sense if
+	the VBUS is present on the USB connector.
+
+config SYS_LOG_USB_DC_STM_LEVEL
+	int
+	prompt "STM32 USB device controller driver log level"
+	depends on USB_DC_STM
+	default 0
+	help
+	Sets log level for STM32 USB device controller driver
+
+	Levels are:
+
+	- 0 OFF, do not write
+
+	- 1 ERROR, only write SYS_LOG_ERR
+
+	- 2 WARNING, write SYS_LOG_WRN in adition to previous level
+
+	- 3 INFO, write SYS_LOG_INF in adition to previous levels
+
+	- 4 DEBUG, write SYS_LOG_DBG in adition to previous levels
+
 endif # USB
