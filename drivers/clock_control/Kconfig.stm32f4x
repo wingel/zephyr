@@ -146,4 +146,14 @@ config CLOCK_STM32F4X_APB2_PRESCALER
 	 APB2 High speed clock (PCLK2) prescaler, allowed values:
 	 0, 2, 4, 8, 16. The APB2 clock must not exceed 84MHz.
 
+config CLOCK_STM32F4X_FLASH_LATENCY
+	int "Flash latency"
+	depends on CLOCK_CONTROL_STM32F4X
+	default 0
+	range 0 15
+	help
+	 Internal flash memory latency (wait states).  If the CPU
+	 frequency is high, the CPU may need wait states so to not
+	 access the internal flash memory too fast.
+
 endif
