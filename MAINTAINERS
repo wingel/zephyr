@@ -149,6 +149,11 @@ M:	Vincenzo Frascino <vincenzo.frascino@linaro.org>
 S:	Supported
 F:	boards/arm/v2m_beetle/
 
+BOARDS/ARM - Weinigel STM-STEPPER
+M:	Christer Weinigel <christer@weinigel.se>
+S:	Supported
+F:	boards/arm/weinigel_stm_stepper/
+
 BOARDS/NIOS2 - ALTERA MAX10
 M:	Andrew Boie <andrew.p.boie@intel.com>
 S:	Supported
